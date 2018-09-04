@@ -1,4 +1,3 @@
-Run@"clear"
 
 "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
 
@@ -32,7 +31,7 @@ laTour=NormalDistribution[]~
        Partition[#,2,1]&
 
 
-terped=Table[#1(1-i)+#2 i,
+lerped=Table[#1(1-i)+#2 i,
                {i,Most@Rescale@Table[Tan[.77 Pi(k-1/2)],
                                       {k,0,1,1/#3}]}
               ]&@@@Append@@@Transpose@
@@ -43,4 +42,4 @@ terped=Table[#1(1-i)+#2 i,
 "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
 
 Print@"\n"
-"terpedLatents.dat"~Export~terped//Echo
+"terpedLatents.dat"~Export~lerped//Echo
