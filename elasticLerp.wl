@@ -5,9 +5,9 @@ vol=<|#[[4]]|>@SoundVolume&
 time=#[[2]]&
 
 transients=First@Import@"transients.mid"~
-            Select~(vol@#>0&) //
-            First/@time/@#& //
-            DeleteDuplicates
+           Select~(vol@#>0&) //
+           First/@time/@#& //
+           DeleteDuplicates
            
 "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
 
@@ -18,8 +18,9 @@ r=If[#1>#2 && IntegerQ@#1, #1,
     ]&@@{Input@"\n   framerate = ",
          1/Min@Differences@transients//Ceiling}
 
-Pause@.05           
-ld=Input@"\n   latent space dimension = " //
+Pause@.05
+           
+ld=Input@"\n   latent space dimension = "//
    If[IntegerQ@#,#,
       Echo@"invalid dimension"; Exit[]
      ]&
@@ -42,4 +43,4 @@ lerped=Table[#1(1-i)+#2 i,
 "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
 
 Print@"\n"
-"terpedLatents.dat"~Export~lerped//Echo
+"elasticLatents.dat"~Export~lerped//Echo
