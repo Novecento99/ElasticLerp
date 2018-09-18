@@ -7,6 +7,6 @@ where *0 < f<sub>t</sub> < 1* is a parametric curve of the parameter *t* with *0
 
 An *Elastic Lerp* is a lerp where the parametric curve is a translated and rescaled tangent:
 
-![](https://github.com/Ludwiggle/ElasticLerp/PNGs/tangentLerp.png)
+![](https://github.com/Ludwiggle/ElasticLerp/blob/master/PNGs/tangentLerp.png)
 
-![](https://github.com/Ludwiggle/ElasticLerp/PNGs/lerpvselastic.gif)
+![](https://github.com/Ludwiggle/ElasticLerp/blob/master/PNGs/lerpvselastic.gif)
