@@ -10,8 +10,12 @@ A linear interpolation between two latent vectors **v<sub>1</sub>** and **v<sub>
 where *0 < f<sub>t</sub> < 1* is a parametric curve of the parameter *0 < t < 1*.
 In particular, for *f<sub>t</sub> = t* we have the standard definition of *lerp* (linear interpolation).
 
-An *Elastic Lerp* (Elerp) is a lerp defined by a non linear parametric curve  shifted and rescaled tangent:
+An *Elastic Lerp* (Elerp) is a lerp defined by the following non-linear parametric curve:
 
 ![](https://github.com/Ludwiggle/ElasticLerp/blob/master/PNGs/Elerp.png)
+
+that is a shifted and rescaled tangent with a *time-warping parameter a*
+
+![](https://github.com/Ludwiggle/ElasticLerp/blob/master/PNGs/elasticity.png)
 
 ![](https://github.com/Ludwiggle/ElasticLerp/blob/master/PNGs/lerpvselastic.gif)
