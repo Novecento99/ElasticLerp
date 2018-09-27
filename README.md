@@ -7,7 +7,8 @@ The returned sequence of vectors will be such that the corresponding outputs of 
 
 `wolframscript -f Elerp.wl`
 
-
+You will be asked to insert the MIDI filename, the frame-rate of the final video and the latent space dimension.
+Given that frame-rate of the final video cannot be smaller than the inverse of the minimum distance in seconds between two MIDI events, a non-valid frame-rate will be automatically replaced with the maximum valid one. 
 
 
 ## Discussion
