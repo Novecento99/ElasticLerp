@@ -17,8 +17,11 @@ An *Elastic Lerp* (Elerp) is a lerp defined by the following non-linear parametr
 that is a shifted and rescaled tangent with a *time-warping parameter a*
 
 ![](https://github.com/Ludwiggle/ElasticLerp/blob/master/PNGs/elasticity.png)
+
 which has a standard *lerp* has a limit for zero time-warp
+
 ![](https://github.com/Ludwiggle/ElasticLerp/blob/master/PNGs/limit_a.png)
 
 The effect of the time-warping parameter is to slow down the pace of the interpolation between the interpolating vectors and to accelerate it in their proximity:
+
 ![](https://github.com/Ludwiggle/ElasticLerp/blob/master/PNGs/lerpvselastic.gif)
