@@ -4,7 +4,7 @@
 vol=<|#[[4]]|>@SoundVolume&
 time=#[[2]]&
 
-transients=First@Import@"transients.mid"~
+transients=First@Import@InputString["\n	MIDI file: "]~
            Select~(vol@#>0&) //
            First/@time/@#& //
            DeleteDuplicates
@@ -15,12 +15,12 @@ r=If[#1>#2 && IntegerQ@#1, #1,
      Echo@"invalid framerate";
      Echo["framerate set to "<>ToString@#2]<>"\n";
      #2
-    ]&@@{Input@"\n   framerate = ",
+    ]&@@{Input@"\n	framerate = ",
          1/Min@Differences@transients//Ceiling}
 
 Pause@.05
            
-ld=Input@"\n   latent space dimension = "//
+ld=Input@"\n	latent space dimension = "//
    If[IntegerQ@#,#,
       Echo@"invalid dimension"; Exit[]
      ]&
