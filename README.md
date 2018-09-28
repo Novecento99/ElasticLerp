@@ -1,14 +1,17 @@
 # Elerp
 
 This WL script reads a MIDI file containing a sequence of *K* events (notes) and it creates an *elastic path* between *K* points in an N-Dimensional space (e.g. the latent space of a GAN).
-The returned sequence of vectors will be such that the corresponding outputs of the generator will form a movie with a swift dynamic near the MIDI events, and a slowly moving image content in between.
+The returned sequence of vectors will be such that the corresponding outputs of the generator will form a movie with a swift dynamic near the MIDI events, and a slowly changing content in between. The final movie will be as if created at variable frame-rate, with accelerated and decelerated playback speed in pace with the MIDI track.
+
 
 ## Usage
 
 `wolframscript -f Elerp.wl`
 
-You will be asked to insert the MIDI filename, the frame-rate of the final video and the latent space dimension.
-Given that frame-rate of the final video cannot be smaller than the inverse of the minimum distance in seconds between two MIDI events, a non-valid frame-rate will be automatically replaced with the maximum valid one. 
+You will be asked to insert the MIDI filename, a valid frame-rate *r* for the final video and the latent space dimension.
+Given that *r* cannot be smaller than the inverse of the minimum distance (in seconds) between two MIDI events, a non-valid frame-rate will be automatically replaced with the minimum valid one.
+
+The output is a CSV file nameed *elasticLatents.dat*
 
 
 ## Discussion
@@ -40,7 +43,6 @@ The effect of the time-warping parameter is to slow down the pace of the interpo
 
 #### Time Synchronization
 
-Let's say there are a total of *K* MIDI events starting at *t<sub>k</sub>*; we need *K* latent vectors **v<sub>k</sub>** that one might want to import from a file or generate at random (script default).
+Let's say there are a total of *K* MIDI events starting at *t<sub>k</sub>*; we start with *K* latent vectors **v<sub>k</sub>** that one might want to import from a file or generate at random. The script default is to generate *K* vectors with normal random components and order these vectors by finding the shortest tour.
 
-
-We want the vector **v<sub>i</sub>** to be returned at time *t<sub>i</sub>* and **v<sub>2</sub>**
+In the final movie, we want the image generated from the **v<sub>k</sub>** latent to appear at time *t<sub>k</sub>*, the latent **v<sub>k+1</sub>** at time *t<sub>k+1</sub>* and so on. We achieve this by sampling the *elastic path* between **v<sub>k</sub>** and **v<sub>k+1</sub>** with a number of interpolated vectors equal to *r* (*t<sub>k+1</sub>* - *t<sub>k</sub>*)

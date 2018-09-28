@@ -28,8 +28,9 @@ ld=Input@"\n	latent space dimension = "//
 "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
  
 laTour=NormalDistribution[]~
-       RandomVariate~{Length@transients,ld}//
-       Partition[#,2,1]&
+         RandomVariate~{Length@transients,ld}//
+       #~Part~Last@FindShortestTour@# &//   
+       Most@Partition[#,2,1]&
 
 
 lerped=Table[#1(1-i)+#2 i,
