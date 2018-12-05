@@ -32,7 +32,7 @@ that is a shifted and rescaled tangent with a *time-warping parameter a*
 
 ![](https://github.com/Ludwiggle/ElasticLerp/blob/master/PNGs/elasticity.png)
 
-Note that the Lerp is the limit of an Elerp for zero time-warp.
+Note that the standard linear interpolation is the limit of the Elerp for zero time-warp.
 
 ![](https://github.com/Ludwiggle/ElasticLerp/blob/master/PNGs/limit_a.png)
 
