@@ -11,7 +11,7 @@ The returned sequence of vectors will be such that the corresponding outputs of 
 You will be asked to insert the MIDI filename, a valid frame-rate *r* for the final video and the latent space dimension.
 Given that *r* cannot be smaller than the inverse of the minimum distance (in seconds) between two MIDI events, a non-valid frame-rate will be automatically replaced with the minimum valid one.
 
-The output is a CSV file nameed *elasticLatents.dat*
+The output is a CSV file nameed *elasticLatents.dat*. Use this file as input of your generator!
 
 
 ## Discussion
