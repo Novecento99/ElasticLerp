@@ -43,6 +43,6 @@ The effect of the time-warping parameter is to slow down the pace of the interpo
 
 #### Time Synchronization
 
-Let's say there are a total of *K* MIDI events starting at *t<sub>k</sub>*; we start with *K* latent vectors **v<sub>k</sub>** that one might want to import from a file or generate at random. The script default is to generate *K* vectors with normal random components and order these vectors by finding the shortest tour.
+Let's say that in the MIDI file there are *K* events occurring at *t<sub>k</sub>*. In this case, we need to define *K* latent vectors **v<sub>k</sub>** that are going to be interpolated. The script default is to generate *K* vectors with normal random components and order these vectors by finding the shortest tour. As an alternative, you can define or import your own latents. 
 
-In the final movie, we want the image generated from the **v<sub>k</sub>** latent to appear at time *t<sub>k</sub>*, the latent **v<sub>k+1</sub>** at time *t<sub>k+1</sub>* and so on. We achieve this by sampling the *elastic path* between **v<sub>k</sub>** and **v<sub>k+1</sub>** with a number of interpolated vectors equal to *r* (*t<sub>k+1</sub>* - *t<sub>k</sub>*)
+Once we have all these *K* latents,  we want the image generated from the **v<sub>k</sub>** vector to appear at time *t<sub>k</sub>* in the movie, the latent **v<sub>k+1</sub>** at time *t<sub>k+1</sub>* and so on. We achieve this by sampling the *elastic path* between **v<sub>k</sub>** and **v<sub>k+1</sub>** with a number of interpolated vectors equal to *r* (*t<sub>k+1</sub>* - *t<sub>k</sub>*)
